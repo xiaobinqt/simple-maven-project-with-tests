@@ -6,4 +6,4 @@ RUN java -version
 
 FROM alpine
 RUN touch "demo java" > ci_test.txt \
-    && tar -czvf my.tar ci_test.txt
+    && tar -czvf my.tar.gz ci_test.txt
