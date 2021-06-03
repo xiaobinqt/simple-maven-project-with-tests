@@ -5,7 +5,8 @@ RUN java -version
 
 
 FROM alpine
-RUN echo  "ci demo" > ci_demo.txt \
-    && tar -czvf cidemo.tar.gz ci_demo.txt \
+ARG VERSION
+RUN echo  "ci demo, version:${VERSION}" > ci_demo.txt \
+    && tar -czvf cidemo.${VERSION}.${GIT_COMMIT}.tar.gz ci_demo.txt \
     && mkdir -p /ci/package \
-    && mv cidemo.tar.gz /ci/package
+    && mv cidemo.${VERSION}.${GIT_COMMIT}.tar.gz /ci/package
