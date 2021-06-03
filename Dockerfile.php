@@ -4,6 +4,6 @@ ENV TZ=Asia/Shanghai
 
 WORKDIR /usr/src/app
 
-
+RUN php -v
 
 
